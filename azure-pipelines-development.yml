@@ -44,6 +44,7 @@ jobs:
     runs-on: ubuntu-latest
     name: Print ./dist dir content
     steps:
+      - uses: CmdLine@2
       - script: |
           echo "******* Root:"
           ls /
