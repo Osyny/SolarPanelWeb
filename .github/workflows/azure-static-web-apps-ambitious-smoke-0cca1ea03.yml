@@ -37,18 +37,19 @@ jobs:
           output_location: "dist" # Built app content directory - optional
           ###### End of Repository/Build Configurations ######
 
-        script: |
-          echo "******* Root:"
-          ls /
-          echo "******* Current dir:"
-          ls .
-          echo "******* ./dist/ content:"
-          ls dist
-          echo "******* ./dist/solar-panels-web content:"
-          ls dist/solar-panels-web
-          echo "******* ./dist/solar-panels-web/browser content:"
-          ls dist/solar-panels-web/browser
-        displayName: "Show dist folder content"
+        script:
+          - |
+            echo "******* Root:"
+            ls /
+            echo "******* Current dir:"
+            ls .
+            echo "******* ./dist/ content:"
+            ls dist
+            echo "******* ./dist/solar-panels-web content:"
+            ls dist/solar-panels-web
+            echo "******* ./dist/solar-panels-web/browser content:"
+            ls dist/solar-panels-web/browser
+
         env:
           NPM_CONFIG_LEGACY_PEER_DEPS: true
 
