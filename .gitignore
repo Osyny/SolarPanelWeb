@@ -17,6 +17,7 @@
 .vs/
 [Oo]bj/
 bin/
+.angular/*
 
 # IDE - VSCode
 .vscode/*
