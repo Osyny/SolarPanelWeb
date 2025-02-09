@@ -1,5 +1,5 @@
 {
-  "name": "electric-station-web",
+  "name": "solar-panels-web",
   "version": "0.0.0",
   "scripts": {
     "ng": "ng",
@@ -7,7 +7,7 @@
     "build": "ng build",
     "watch": "ng build --watch --configuration development",
     "test": "ng test",
-    "serve:ssr:ElectricStationWeb": "node dist/electric-station-web/server/server.mjs"
+    "serve:ssr:ElectricStationWeb": "node dist/solar-panels-web/server/server.mjs"
   },
   "private": true,
   "dependencies": {
