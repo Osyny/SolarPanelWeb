@@ -44,18 +44,19 @@ jobs:
     name: Print ./dist dir content
     steps:
       - name: Run script
-      - script: |
-          echo "******* Root:"
-          ls /
-          echo "******* Current dir:"
-          ls .
-          echo "******* ./dist/ content:"
-          ls dist
-          echo "******* ./dist/solar-panels-web content:"
-          ls dist/solar-panels-web
-          echo "******* ./dist/solar-panels-web/browser content:"
-          ls dist/solar-panels-web/browser
-        displayName: "!!!!!!! RUN SCRIPT !!!!!!"
+      - run: ls dist/solar-panels-web
+      # - script: |
+      #     echo "******* Root:"
+      #     ls /
+      #     echo "******* Current dir:"
+      #     ls .
+      #     echo "******* ./dist/ content:"
+      #     ls dist
+      #     echo "******* ./dist/solar-panels-web content:"
+      #     ls dist/solar-panels-web
+      #     echo "******* ./dist/solar-panels-web/browser content:"
+      #     ls dist/solar-panels-web/browser
+      #   displayName: "!!!!!!! RUN SCRIPT !!!!!!"
 
   close_pull_request_job:
     if: github.event_name == 'pull_request' && github.event.action == 'closed'
