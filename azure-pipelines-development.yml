@@ -33,10 +33,23 @@ jobs:
           action: "upload"
           ###### Repository/Build Configurations - These values can be configured to match your app requirements. ######
           # For more information regarding Static Web App workflow configurations, please visit: https://aka.ms/swaworkflowconfig
-          app_location: "dist/solar-panels-web/browser/" # App source code path
+          app_location: "solar-panels-web" # App source code path
           api_location: "" # Api source code path - optional
-          output_location: "dist/solar-panels-web" # Built app content directory - optional
+          output_location: "dist" # Built app content directory - optional
           ###### End of Repository/Build Configurations ######
+
+      - script: |
+          echo "******* Root:"
+          ls /
+          echo "******* Current dir:"
+          ls .
+          echo "******* ./dist/ content:"
+          ls dist
+          echo "******* ./dist/solar-panels-web content:"
+          ls dist/solar-panels-web
+          echo "******* ./dist/solar-panels-web/browser content:"
+          ls dist/solar-panels-web/browser
+        displayName: "Show dist folder content"
         env:
           NPM_CONFIG_LEGACY_PEER_DEPS: true
 
