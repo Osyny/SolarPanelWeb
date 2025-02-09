@@ -45,7 +45,7 @@ jobs:
     name: Print ./dist dir content
     steps:
       - name: Run script
-      - run: ls dist/solar-panels-web
+        run: ls dist/solar-panels-web
       # - script: |
       #     echo "******* Root:"
       #     ls /
