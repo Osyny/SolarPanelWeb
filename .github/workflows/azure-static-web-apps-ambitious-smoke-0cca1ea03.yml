@@ -36,18 +36,17 @@ jobs:
           api_location: "" # Api source code path - optional
           output_location: "dist" # Built app content directory - optional
           ###### End of Repository/Build Configurations ######
-
-      - script: |
-          echo "******* Root:"
-          ls /
-          echo "******* Current dir:"
-          ls .
-          echo "******* ./dist/ content:"
-          ls dist
-          echo "******* ./dist/solar-panels-web content:"
-          ls dist/solar-panels-web
-          echo "******* ./dist/solar-panels-web/browser content:"
-          ls dist/solar-panels-web/browser
+          
+        run: echo "******* Root:"
+        run: ls /
+        run: echo "******* Current dir:"
+        run: ls .
+        run: echo "******* ./dist/ content:"
+        run: ls dist
+        run: echo "******* ./dist/solar-panels-web content:"
+        run: ls dist/solar-panels-web
+        run: echo "******* ./dist/solar-panels-web/browser content:"
+        run: ls dist/solar-panels-web/browser
 
         env:
           NPM_CONFIG_LEGACY_PEER_DEPS: true
