@@ -5,6 +5,9 @@ import { BsModalRef } from 'ngx-bootstrap/modal';
 
 import { NgForm } from '@angular/forms';
 import { SolarPanelService } from '../../../services/solar-panel/solar-panel.service';
+import { DataConfigurator } from '../dtos/data-configurator.dto';
+import { SolarPanelDto } from '../../../models/solar-panels/solar-panel.dto';
+import { ConfiguratorResponse } from '../../../models/solar-panels/configurator-response.dto';
 
 @Component({
   selector: 'app-configurator',
@@ -16,9 +19,9 @@ export class ConfiguratorComponent
   implements OnInit, OnDestroy
 {
   title: string = 'Configurator';
-  widthRoof?: number;
-  lengthRoof?: number;
-  result?: string | undefined;
+
+  result: ConfiguratorResponse | undefined;
+  input: DataConfigurator = new DataConfigurator();
 
   private $unsubscribe = new Subject<void>();
 
@@ -42,10 +45,10 @@ export class ConfiguratorComponent
       ngForm.form.markAllAsTouched();
       return;
     }
-    if (this.widthRoof && this.lengthRoof)
-      this.solarPanelService
-        .configurator(this.widthRoof, this.lengthRoof)
-        .subscribe((res) => {});
+    if (this.input)
+      this.solarPanelService.configurator(this.input).subscribe((res) => {
+        this.result = res;
+      });
   }
 
   cancel() {

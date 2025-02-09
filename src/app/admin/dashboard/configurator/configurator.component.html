@@ -7,11 +7,11 @@
     <div class="container container-modal">
       <div class="row mb-15">
         <div class="col-6">
-          <label class="txt-14 fw-500 mb-10">Width Roof:</label>
+          <label class="txt-14 fw-500 mb-10">Width Roof mm:</label>
           <input
             type="number"
             class="form-control"
-            [(ngModel)]="widthRoof"
+            [(ngModel)]="input.widthRoof"
             name="widthRoof"
             #widthRoofModel="ngModel"
             #widthRoofModelEl
@@ -23,11 +23,11 @@
           ></validation-summary>
         </div>
         <div class="col-6">
-          <label class="txt-14 fw-500 mb-10">Length Roof:</label>
+          <label class="txt-14 fw-500 mb-10">Length Roof mm:</label>
           <input
             type="number"
             class="form-control"
-            [(ngModel)]="lengthRoof"
+            [(ngModel)]="input.lengthRoof"
             name="lengthRoof"
             #lengthRoofModel="ngModel"
             #lengthRoofModelEl
@@ -39,20 +39,56 @@
           ></validation-summary>
         </div>
       </div>
-      <ng-component *ngIf="result">
+      <ng-container *ngIf="result">
+        <div>
+          <hr />
+          <h3>Result:</h3>
+          <div class="row mb-15">
+            <div class="col-6">
+              <label class="txt-14 fw-500 mb-10">Width, mm:</label>
+              <input
+                readonly
+                type="text"
+                class="form-control"
+                [(ngModel)]="result.panel.width"
+                name="width"
+              />
+            </div>
+            <div class="col-6">
+              <label class="txt-14 fw-500 mb-10">Length, mm:</label>
+              <input
+                readonly
+                type="text"
+                class="form-control"
+                [(ngModel)]="result.panel.length"
+                name="length"
+              />
+            </div>
+          </div>
+        </div>
         <div class="row mb-15">
           <div class="col-6">
-            <label class="txt-14 fw-500 mb-10">Result:</label>
+            <label class="txt-14 fw-500 mb-10">Count:</label>
             <input
               readonly
               type="text"
               class="form-control"
-              [(ngModel)]="result"
-              name="result"
+              [(ngModel)]="result.count"
+              name="count"
+            />
+          </div>
+          <div class="col-6">
+            <label class="txt-14 fw-500 mb-10">Total power, watts:</label>
+            <input
+              readonly
+              type="text"
+              class="form-control"
+              [(ngModel)]="result.totalPower"
+              name="totalPower"
             />
           </div>
         </div>
-      </ng-component>
+      </ng-container>
     </div>
   </div>
   <div class="modal-footer">

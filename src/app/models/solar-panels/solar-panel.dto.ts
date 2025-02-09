@@ -5,7 +5,7 @@ export interface SolarPanelsResponse {
   limit: number;
 }
 
-export interface SolarPanelDto {
+export class SolarPanelDto {
   id?: string;
   width?: number;
   length?: number;

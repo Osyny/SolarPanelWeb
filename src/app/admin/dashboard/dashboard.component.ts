@@ -80,7 +80,6 @@ export class DashboardComponent extends AppComponentBase implements OnInit {
 
   loadDataPanels(input: FilterInput) {
     this.loading = true;
-
     this.solarPanelService
       .getAll(input)
       .pipe(
