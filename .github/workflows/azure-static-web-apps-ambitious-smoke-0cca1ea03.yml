@@ -37,7 +37,7 @@ jobs:
           output_location: "dist" # Built app content directory - optional
           ###### End of Repository/Build Configurations ######
 
-      - script: |
+        script: |
           echo "******* Root:"
           ls /
           echo "******* Current dir:"
