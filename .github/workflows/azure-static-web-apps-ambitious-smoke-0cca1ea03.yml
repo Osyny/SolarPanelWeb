@@ -39,14 +39,10 @@ jobs:
         env:
           NPM_CONFIG_LEGACY_PEER_DEPS: true
 
-  print_dist_dir_content:
-    runs-on: ubuntu-latest
-    name: Print ./dist dir content
-    steps:
       - name: Run script
         run: |
           ls -la .
-      #    ls -la dist
+          ls -la /
       # - script: |
       #     echo "******* Root:"
       #     ls /
