@@ -17,14 +17,14 @@ jobs:
     steps:
       - uses: actions/checkout@v3
         with:
+          app_build_command: "npm install @angular/cli"
+          api_build_command:: "npm install --force"
           submodules: true
           lfs: false
       - name: Build And Deploy
         id: builddeploy
         uses: Azure/static-web-apps-deploy@v1
         with:
-          app_build_command: "npm install @angular/cli"
-          api_build_command:: "npm install --force"
           azure_static_web_apps_api_token: ${{ secrets.AZURE_STATIC_WEB_APPS_API_TOKEN_AMBITIOUS_SMOKE_0CCA1EA03 }}
           repo_token: ${{ secrets.GITHUB_TOKEN }} # Used for Github integrations (i.e. PR comments)
           action: "upload"
