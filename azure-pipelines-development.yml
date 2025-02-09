@@ -47,7 +47,7 @@ jobs:
       - name: Run script
         run: |
           ls -la .
-          ls -la dist
+      #    ls -la dist
       # - script: |
       #     echo "******* Root:"
       #     ls /
