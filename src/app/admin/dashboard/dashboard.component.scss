@@ -42,14 +42,13 @@
     min-width: auto;
   }
 
-  // tr:nth-child(8)
-  //   .dropdown-menu-right
-  //   tr:nth-child(9)
-  //   .dropdown-menu-right
+  .hidden {
+    display: none !important;
+  }
+
   tr:last-child .dropdown-menu-right,
   tr:nth-last-child(2) .dropdown-menu-right {
     top: auto !important;
-    // left: -20px !important;
     bottom: calc(100% + 2px) !important;
   }
 

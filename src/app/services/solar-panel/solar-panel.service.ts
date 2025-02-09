@@ -10,6 +10,7 @@ import {
 import { ConfiguratorResponse } from '../../models/solar-panels/configurator-response.dto';
 import { FilterInput } from '../../admin/dashboard/dtos/filter-input';
 import { OutputDataResponse } from '../output-data-response';
+import { DataConfigurator } from '../../admin/dashboard/dtos/data-configurator.dto';
 
 @Injectable({
   providedIn: 'root',
@@ -58,16 +59,17 @@ export class SolarPanelService {
     );
   }
 
-  configurator(
-    widthRoof: number,
-    lengthRoof: number
-  ): Observable<ConfiguratorResponse> {
+  configurator(input: DataConfigurator): Observable<ConfiguratorResponse> {
     let params = new HttpParams();
-    params = params.append('widthRoof', widthRoof);
-    params = params.append('lengthRoof', lengthRoof);
-    let response = this.http.post<ConfiguratorResponse>(
+    for (const [key, value] of Object.entries(input)) {
+      console.log(`${key}: ${value}`);
+      if (value) {
+        params = params.append(key, value);
+      }
+    }
+    let response = this.http.get<ConfiguratorResponse>(
       `${this.apiUrl}/api/SolarPanel/configurator`,
-      params
+      { params }
     );
     return response;
   }

@@ -6,7 +6,6 @@
 </div>
 
 <div class="_container">
-  <spiner *ngIf="!totalRecords && loading"></spiner>
   <div class="panel__table">
     <div class="table-container table-container--has-input">
       <p-table
@@ -19,17 +18,17 @@
         [totalRecords]="totalRecords"
       >
         <ng-template pTemplate="header" class="table-xl-responsive">
-          <tr>
+          <tr [class.hidden]="loading">
             <th pSortableColumn="width" class="sticky-col">
-              Width
+              Width mm
               <p-sortIcon field="width"></p-sortIcon>
             </th>
             <th pSortableColumn="length" class="sticky-col">
-              Length
+              Length mm
               <p-sortIcon field="length"></p-sortIcon>
             </th>
             <th pSortableColumn="power" class="sticky-col">
-              Power
+              Power W
               <p-sortIcon field="power"></p-sortIcon>
             </th>
             <th pSortableColumn="stock" class="sticky-col">
