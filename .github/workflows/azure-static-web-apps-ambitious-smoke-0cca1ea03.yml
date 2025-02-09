@@ -19,14 +19,14 @@ jobs:
         with:
           submodules: true
           lfs: false
-      - task: Npm@1
+      - uses: Npm@1
         displayName: "npm install angular cli"
         inputs:
           command: custom
           verbose: false
           customCommand: "install @angular/cli"
 
-      - task: Npm@1
+      - uses: Npm@1
         displayName: "npm install"
         inputs:
           command: "custom"
