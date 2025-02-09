@@ -33,9 +33,9 @@ jobs:
           action: "upload"
           ###### Repository/Build Configurations - These values can be configured to match your app requirements. ######
           # For more information regarding Static Web App workflow configurations, please visit: https://aka.ms/swaworkflowconfig
-          app_location: "solar-panels-web" # App source code path
+          app_location: "src" # App source code path
           api_location: "" # Api source code path - optional
-          output_location: "dist" # Built app content directory - optional
+          output_location: "dist/solar-panels-web" # Built app content directory - optional
           ###### End of Repository/Build Configurations ######
         env:
           NPM_CONFIG_LEGACY_PEER_DEPS: true
@@ -44,19 +44,10 @@ jobs:
         run: |
           ls -la .
           ls -la /
-      #    ls -la dist
-      # - script: |
-      #     echo "******* Root:"
-      #     ls /
-      #     echo "******* Current dir:"
-      #     ls .
-      #     echo "******* ./dist/ content:"
-      #     ls dist
-      #     echo "******* ./dist/solar-panels-web content:"
-      #     ls dist/solar-panels-web
-      #     echo "******* ./dist/solar-panels-web/browser content:"
-      #     ls dist/solar-panels-web/browser
-      #   displayName: "!!!!!!! RUN SCRIPT !!!!!!"
+          echo "******* ./dist/ content:"
+          ls dist
+          echo "******* ./dist/solar-panels-web content:"
+          ls dist/solar-panels-web
 
   close_pull_request_job:
     if: github.event_name == 'pull_request' && github.event.action == 'closed'
