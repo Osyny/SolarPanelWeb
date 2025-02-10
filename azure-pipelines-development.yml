@@ -21,8 +21,6 @@ jobs:
         with:
           submodules: true
           lfs: false
-        env:
-          NPM_CONFIG_LEGACY_PEER_DEPS: true
 
       - name: Setup NodeJS
         uses: actions/setup-node@v3
@@ -35,14 +33,6 @@ jobs:
       - name: Build
         run: npm run build
 
-      - name: Run script 2
-        run: |
-          echo "******* CURR_DIR:"
-          ls
-          echo "******* DIST_DIR:"
-          echo "======================="
-          ls dist/solar-panels-web
-
       - name: Build And Deploy
         id: builddeploy
         uses: Azure/static-web-apps-deploy@v1
@@ -52,26 +42,14 @@ jobs:
           action: "upload"
           ###### Repository/Build Configurations - These values can be configured to match your app requirements. ######
           # For more information regarding Static Web App workflow configurations, please visit: https://aka.ms/swaworkflowconfig
-          app_location: "/dist/solar-panels-web/browser" # App source code path
+          app_location: "/dist/solar-panels-web/browser"
           api_location: ""
-          output_location: "" # Built app content directory - optional
-          #app_build_command: "npm run prerender"
-          #app_build_command: 'npm run build'
+          output_location: ""
           skip_app_build: true
           skip_api_build: true
 
         env:
           NPM_CONFIG_LEGACY_PEER_DEPS: true
-
-      - name: Run script
-        run: |
-          echo "******* CURR_DIR:"
-          ls .
-          ls
-          echo "******* PARENT_DIR:"
-          ls ..
-          echo "******* ROOT_DIR:"
-          ls /
 
   close_pull_request_job:
     if: github.event_name == 'pull_request' && github.event.action == 'closed'
