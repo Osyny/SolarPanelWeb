@@ -41,7 +41,7 @@ jobs:
           ls
           echo "******* DIST_DIR:"
           echo "======================="
-          ls dist
+          ls dist/solar-panels-web
 
       - name: Build And Deploy
         id: builddeploy
@@ -52,7 +52,7 @@ jobs:
           action: "upload"
           ###### Repository/Build Configurations - These values can be configured to match your app requirements. ######
           # For more information regarding Static Web App workflow configurations, please visit: https://aka.ms/swaworkflowconfig
-          app_location: "/dist/solar-panels-web" # App source code path
+          app_location: "/dist/solar-panels-web/browser" # App source code path
           api_location: ""
           output_location: "" # Built app content directory - optional
           #app_build_command: "npm run prerender"
