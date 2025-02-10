@@ -32,41 +32,16 @@ jobs:
       - name: Install Packages
         run: npm i
 
-      - name: Run script 1
-        run: |
-          echo "******* CURR_DIR:"
-          ls .
-          ls
-          echo "******* PARENT_DIR:"
-          ls ..
-          echo "******* ROOT_DIR:"
-          ls /
-
       - name: Build
         run: npm run build
 
       - name: Run script 2
         run: |
           echo "******* CURR_DIR:"
-          ls .
           ls
-          echo "******* PARENT_DIR:"
-          ls ..
-          echo "******* ROOT_DIR:"
-          ls /
-
-      - name: Scully
-        run: npm run scully
-
-      - name: Run script 3
-        run: |
-          echo "******* CURR_DIR:"
-          ls .
-          ls
-          echo "******* PARENT_DIR:"
-          ls ..
-          echo "******* ROOT_DIR:"
-          ls /
+          echo "******* DIST_DIR:"
+          echo "======================="
+          ls dist
 
       - name: Build And Deploy
         id: builddeploy
