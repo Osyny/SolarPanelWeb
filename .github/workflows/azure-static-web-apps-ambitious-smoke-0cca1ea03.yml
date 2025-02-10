@@ -59,7 +59,7 @@ jobs:
           #app_build_command: 'npm run build'
           skip_app_build: true
           skip_api_build: true
-          verbose: true
+
         env:
           NPM_CONFIG_LEGACY_PEER_DEPS: true
 
